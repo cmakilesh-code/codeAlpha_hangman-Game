@@ -1,0 +1,27 @@
+def start_chat():
+    """Main function to run the chatbot."""
+    print("Chatbot: Hello! I am your simple rule-based assistant. (Type 'bye' to exit)")
+    
+    # 1. Loop: Keeps the conversation going until the user says 'bye'
+    while True:
+        # 2. Input/Output: Grabs the user's text, removes extra spaces, and makes it lowercase
+        user_input = input("You: ").strip().lower()
+        
+        # 3. if-elif: The "Rules" engine of the chatbot
+        if user_input in ["hello", "hi", "hey"]:
+            print("Chatbot: Hi!")
+            
+        elif user_input in ["how are you", "how are you?"]:
+            print("Chatbot: I'm fine, thanks!")
+            
+        elif user_input in ["bye", "goodbye", "quit"]:
+            print("Chatbot: Goodbye!")
+            break  # This stops the while loop
+            
+        else:
+            # Fallback response for unhandled inputs
+            print("Chatbot: I'm sorry, I only know how to say hello, how are you, and bye.")
+
+# 4. Function execution: This actually starts the program
+if __name__ == "__main__":
+    start_chat()
